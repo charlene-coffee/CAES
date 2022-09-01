@@ -52,6 +52,8 @@
   </style>
 </head>
 <body>
+
+
         <?php include("headerpage.php");?>
         <section class="section-1" data-bg-overlay="#207336" data-pages="parallax"> 
           <div class="overlay">
@@ -62,9 +64,9 @@
 
                   </div>
                   <div class="col-6" style="font-family: pambata; color: white "> 
-                  <img src="../image/CAESLOGO.png" width="250" style="  padding-top: 80px" >
+                  <img src="../image/CAESLOGO.png" width="230" style="  padding-top: 60px" >
                       <h2>CALAMBA ADVENTIST ELEMENTARY SCHOOL</h2>
-                      <h6 style="font-family: arial">CALAMBA CITY, LAGUNA</h6>
+                      <h6 style="font-family: arial">THE SCHOOL THAT LEADS TO JESUS</h6>
                   </div>
                   <div class="col-3">
 
@@ -80,12 +82,12 @@
         <div style=" background-color:#00539cff ; height : 10px ; width : 100% " > </div>
           <div class="container" style="padding-top: 50px">
            <div class="row">
-                  <div class="col-6 " style=" padding-top : 10px; padding-bottom: 10px"> 
+                  <div class="col-12 col-sm-6" style=" padding-top : 10px; padding-bottom: 10px"> 
                     <div class="text-center "  style= " padding: 20px ;font-family:pambata1; font-size:60px; border: 5px solid #FFDB58"> 
                       <b>WHY CHOOSE ADVENTIST EDUCATION?</b>
                     </div>
                   </div>
-                  <div class="col-6">
+                  <div class="col-12 col-sm-6">
                     <div class="text-center" style= "font-family:pambata; font-size:25px; padding: 10px">
                           
                           <span style= "font-family:pambata; font-size:40px;" >Because ,</span>
@@ -138,40 +140,47 @@
             </a>
           </div>
           </div>
-        <div class="float">
-        <i class="fa-brands fa-facebook-messenger fa-3x" style="margin-top: 5px;"></i>
-       
-        </div>
-
-
           
           <?php include("footer.php");?>
     </div>
 
-    <!-- Modal -->
-<div class="modal fade" id="messengerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+   
     
     <script src="../resources/jquery/jquery.min.js"></script>
     <script src="../resources/bootstrap/js/bootstrap.min.js"></script>
     <script src="../resources/fontawesome/js/all.min.js"></script>
+
+    <!-- Messenger Chat Plugin Code -->
+<div id="fb-root"></div>
+
+<!-- Your Chat Plugin code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+
+<script>
+  var chatbox = document.getElementById('fb-customer-chat');
+  chatbox.setAttribute("page_id", "102935255417585");
+  chatbox.setAttribute("attribution", "biz_inbox");
+</script>
+
+<!-- Your SDK code -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v14.0'
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
     
 </body>
 </html>
+       

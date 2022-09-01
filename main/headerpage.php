@@ -1,13 +1,13 @@
 
-<div class="upper-part " style= "">
+<div class="upper-part ">
   <div class= "row" style="margin-right:0"> 
-    <div class="col-8" style="padding-left: 150px">  
-       <img src="../image/CAESLOGO.png" width="50" style=" float:left; padding-top: 5px" >
-       <b> <div style=" font-family:pambata; font-size:43px; padding-top: 2px;  padding-left: 5px; float:left">CAES</div> </b>
+    <div class="col-8 logo-caes" >  
+       <img src="../image/CAESLOGO.png" width="40" style=" float:left; padding-top: 5px" >
+       <b> <div style=" font-family:pambata; font-size:29px; padding-top: 5px;  padding-left: 7px; float:left">CAES</div> </b>
     
     </div>
-    <div class="col-4" style="padding-top: 15px; color: #00539cff;  "  >
-    <i class="fa-brands fa-square-youtube fa-2x"style="float:right  ;padding-right: 150px"></i>
+    <div class="col-4" style="padding-top: 10px; color: #00539cff;  "  >
+    <i class="fa-brands fa-square-youtube fa-2x youtube-icon"></i>
     <i class="fa-brands fa-square-twitter fa-2x"style="float:right ;padding-right: 5px"></i>
     <i class="fa-brands fa-square-instagram fa-2x"style="float:right;padding-right: 5px "></i>
     <i class="fa-brands fa-square-facebook  fa-2x" style="float:right ;padding-right: 5px"></i>
@@ -41,21 +41,16 @@
                               <a class="dropdown-item" href="#">LANDLINE : 049-545-7891</a>
                              <a class="dropdown-item" href="#">CELLPHIONE NO:0935-781-1124</a>
                              <a class="dropdown-item" href="#">ADDRESS: 603 Elepaño II
-                              Subdivision, Barangay Tres, Calamba city, Laguna</a>
+                              Subdivision, Barangay Tres, Calamba City, Laguna</a>
                              
                             </div>
                           </li>
                           
                     </ul>
-                    <div class="dropdown" style="float: right ;">
-                        <button class="btn btn-primary dropdown-toggle btn-sm"type="button" id="LMS" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          LMS
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="#">STUDENT</a>
-                          <a class="dropdown-item" href="#">ADMIN</a>
-                       
-                        </div>
+                    <div class="dropdown" style="float:right;">
+                        <button class="btn btn-primary btn-sm"type="button" id="LMS" > 
+                          <a style="color: white ;" href="../../main2/School/LMS/login.html"> LMS</a>
+                        </button>              
                       </div>
                    
                     </div>
