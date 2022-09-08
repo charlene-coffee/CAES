@@ -4,37 +4,36 @@
   <title>Enrollment</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../resources/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <?php include("links.php");?>
  
 </head>
 <body>
     
     <?php include("headerpage.php");?>
-        <div class="container " style=" background: #FFDB58; padding-bottom: 10px">
+        <div class="container-fluid " style=" background: #FFDB58; padding-bottom: 10px ; padding-top: 0px">
             <center>
-                <div class="col-xs-12 col-sm-6">
-                    <H1>VISSION</H1>
-                    <p>
+                <div class="col-xs-12 col-sm-6" >
+                    <H1 style="font-family: pambata; font-size :50px; padding-top:  30px"> VISSION</H1>
+                    <p class="mv-fontsize">
                         We envision CALAMBA ADVENTIST ELEMENTARY SCHOOL<br>
                         to be a center of basic christian education equipped<br>
                         with advance facilities and technologies preparing<br>
                         pupils with excellence in learning,living and serving.. PHILOSOPHY <br> <br>
                         God the Creator and Sustainer of entire universe is the source of all knowledge and wisdom. <br>
                     </p> 
-                    <H1>MISSION</H1>
-                    <p> To educate pupils toward a wholistic life grounded in a Biblical values, <br>
+                    <H1 style="font-family: pambata; font-size :50px; padding-top: 30px;">MISSION</H1>
+                    <p class="mv-fontsize"> To educate pupils toward a wholistic life grounded in a Biblical values, <br>
                            growing in the likeness of God and be ready for the soon coming of JESUS.
                     </p>
                         
-                    <H1>CAES PHILOSOPHY</H1>
-                    <p>
+                    <H1 style="font-family: pambata; font-size :50px; padding-top:  30px">CAES PHILOSOPHY</H1>
+                    <p class="mv-fontsize">
                             God the Creator ans Sustainer of the Earth, and the entire universe is the source of all knowledge and wisdom
                     </p>
 
-                    <H1>CALAMBA HYMN</H1>
+                    <H1 style="font-family: pambata; font-size :50px; padding-top:  30px">CALAMBA HYMN</H1>
                             
-                    <p style="margin:0">
+                    <p style="margin:0" class="mv-fontsize">
                             Sa Baybay ng Look ng Laguna
                               Bayan kang tangi sa ganda
                               Duyan ka ng mga bayaning

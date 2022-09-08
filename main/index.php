@@ -4,10 +4,7 @@
   <title>website</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../resources/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="../resources/fontawesome/css/all.min.css">
-
+  <?php include("links.php");?>
 
  
   <style>
@@ -64,7 +61,7 @@
 
                   </div>
                   <div class="col-6" style="font-family: pambata; color: white "> 
-                  <img src="../image/CAESLOGO.png" width="230" style="  padding-top: 60px" >
+                  <img class="logo-class" src="../image/CAESLOGO.png" width="230"  >
                       <h2>CALAMBA ADVENTIST ELEMENTARY SCHOOL</h2>
                       <h6 style="font-family: arial">THE SCHOOL THAT LEADS TO JESUS</h6>
                   </div>
@@ -143,12 +140,7 @@
           
           <?php include("footer.php");?>
     </div>
-
-   
-    
-    <script src="../resources/jquery/jquery.min.js"></script>
-    <script src="../resources/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../resources/fontawesome/js/all.min.js"></script>
+    <?php include("script.php");?>
 
     <!-- Messenger Chat Plugin Code -->
 <div id="fb-root"></div>

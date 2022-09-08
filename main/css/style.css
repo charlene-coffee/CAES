@@ -22,7 +22,6 @@
 .mustard { 
     background-color: #FFDB58;
 
-
 }
 
 .dropdown-menu { 
@@ -39,18 +38,82 @@
   padding-left: 150px;
 }
 
-@media screen and (max-width: 700px) {
+.logo-class{
+  padding-top: 60px;
+}
+
+.mv-fontsize{
+  font-size: 20px;
+}
+.fa-fontsize{
+  font-size: 13px;
+  margin: 0px;
+}
+
+.fa-image{
+  border-radius:150px;
+  border: 3px solid #e3f307;
+  width: 100px;
+  height: 100px ;
+
+}
+
+.right-line {
+  border-right: 5px #343a40 solid;
+  height:2em
+}
+.left-line {
+  border-left: 5px #343a40 solid;
+  height:2em
+}
+
+
+.top-line {
+  border-top: 5px #343a40 solid;
+}
+
+.halved {
+  width: 50%;
+  float:left;
+}
+  
+
+.bg-color {
+  background-color: antiquewhite;
+ 
+}
+
+@media screen and (min-width: 350px) and (max-width: 700px) {
   .youtube-icon {
     float: right;
-    padding-right: 10px;
+    padding-right: 5px;
   }
   .logo-caes{
     padding-left: 35px;
   }
-  .col-6{
-  width:100%;
+
+  .logo-class{
+    padding-top: 60px;
+    width : 160px;
+
+  }
+  .footer-logo{
+    width: 40px;
+
+  }
+#caes-nav{
+  font-size: 13px;
+
 }
+ 
+.mustard { 
+  background-color: #FFDB58;
+  font-size: 12px;
+
 }
 
-
-logo-caes
+.col-4.left-line.right-line {
+  border-right: 0px #343a40 solid;
+  height:2em
+}
+}
