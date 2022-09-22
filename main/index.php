@@ -16,7 +16,8 @@
       .section-1{
 
         height: 500px;
-        background-image: url("https://www.feu.edu.ph/wp-content/themes/feu_theme2019/assets/images/hero_1.jpg");
+         background-image: url("https://www.feu.edu.ph/wp-content/themes/feu_theme2019/assets/images/hero_1.jpg"); 
+        /* background-image: url("../image/caseSchool.jpg"); */
         background-position: center 11.8581%;
         background-repeat: no-repeat;
         background-size: 100% 100%;

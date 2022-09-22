@@ -40,7 +40,8 @@
                             <div class="dropdown-menu  dropdown-menu-right mustard" aria-labelledby="contact" >
                              <a class="dropdown-item" href="#">LANDLINE : 049-545-7891</a>
                              <a class="dropdown-item" href="#">CELLPHIONE NO:0935-781-1124</a>
-                             <!-- <a class="dropdown-item" href="#">ADDRESS: 603 Elepaño II Subdivision, Barangay Tres, Calamba City, Laguna</a> -->
+                            </div>
+    
                           </li>
                           
                           <li class="nav-item ">
