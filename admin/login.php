@@ -150,15 +150,10 @@
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
             <img id="profile-img" class="profile-img-card" src="../image/CAESLOGO.png"  >
             <p id="profile-name" class="profile-name-card"></p>
-            <form class="form-signin">
+            <form class="form-signin" id="loginform">
                 <span id="reauth-email" class="reauth-email"></span>
                 <input type="text" id="username" class="form-control" placeholder="Username" required autofocus>
                 <input type="password" id="password" class="form-control" placeholder="Password" required>
-                <div id="remember" class="checkbox">
-                    <label>
-                        <input type="checkbox" value="remember-me"> Remember me
-                    </label>
-                </div>
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
             </form><!-- /form -->
             
@@ -173,20 +168,55 @@
 		   var $inputs = $form.find("input, select, button, textarea");
 		   var serializedData = $form.serialize();
 
-		   request = $.ajax({
-				   url: "/LMS/login.php",
-				   type: "get",
-				   data: serializedData
-			   });
-		   
-			   request.fail(function (jqXHR, textStatus, errorThrown){
-				   // Log the error to the console
-				   console.error(
-					   "The following error occurred: "+
-					   textStatus, errorThrown
-				   );
-			   });	
-		}
+        if(checkStringCount($('#username').val()) || checkStringCount($('#password').val())) {
+                
+            $.ajax({
+                      url: "../admin/backend/authenticator.php",
+                      type: "post",
+                      data:{ 
+                        user_name:$('#username').val(),
+                        password:$('#password').val(),
+                       },
+                      success: function(data, textStatus, xhr) {
+                          console.log(xhr.status);
+                          console.log("Response:  "+data);
+                          if(data==1){
+                            location.href="../admin/index.php";
+                          
+                        }else{
+                            Swal.fire(
+                            'Login Failed',
+                            'Unauthorized user',
+                            'error'
+                          )
+                            
+                        }
+                            
+                        
+                      },
+                      complete: function(xhr, textStatus) {
+                          console.log(xhr.status);
+                      },
+                      error: function (request, status, error) {
+                          alert(request.responseText);
+                      }
+                      
+                            
+                    });
+
+
+             
+        }
+		});
+
+        function checkStringCount(a){
+            var length=a.length;
+
+        if(length<5){
+            return false;
+      } 
+            return true;
+        };
 
    </Script>
 

@@ -12,6 +12,7 @@
     <i class="fa-brands fa-square-twitter fa-2x"style="float:right ;padding-right: 5px"></i>
     <i class="fa-brands fa-square-instagram fa-2x"style="float:right;padding-right: 5px "></i>
     <i class="fa-brands fa-square-facebook  fa-2x" style="float:right ;padding-right: 5px"></i>
+   
 
 
 
@@ -39,7 +40,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="contact" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CONTACT</a>
                             <div class="dropdown-menu  dropdown-menu-right mustard" aria-labelledby="contact" >
                              <a class="dropdown-item" href="#">LANDLINE : 049-545-7891</a>
-                             <a class="dropdown-item" href="#">CELLPHIONE NO:0935-781-1124</a>
+                             <a class="dropdown-item" href="#">CELLPHONE NO:0935-781-1124</a>
                             </div>
     
                           </li>

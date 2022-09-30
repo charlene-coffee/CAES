@@ -7,47 +7,7 @@
   <?php include("links.php");?>
 
  
-  <style>
   
-      .image-style{
-        height: 450px; 
-        width: 1500px;
-      }
-      .section-1{
-
-        height: 500px;
-         background-image: url("https://www.feu.edu.ph/wp-content/themes/feu_theme2019/assets/images/hero_1.jpg"); 
-        /* background-image: url("../image/caseSchool.jpg"); */
-        background-position: center 11.8581%;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        background-attachment: fixed;
-        /* z-index: 0; */
-        
-      }
-      .overlay{
-        background: #20733636;
-        overflow: hidden;
-        height:100%;
-        z-index: 1;
-        position: relative;
-      }
-
-      .float{
-        position:fixed;
-        width:60px;
-        height:60px;
-        bottom:40px;
-        right:40px;
-        background-color:#00539cff;
-        color:#FFF;
-        border-radius:50px;
-        text-align:center;
-        box-shadow: 2px 2px 3px #999;
-}
-
-      
-  </style>
 </head>
 <body>
 

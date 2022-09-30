@@ -1,3 +1,5 @@
+<?php session_start();
+ ?>
 
 
 
@@ -21,7 +23,10 @@
                           <div class="nav-item dropdown">
                               <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                                   <!-- <img class="rounded-circle me-lg-2" src="person-icon.jpg" alt="" style="width: 40px; height: 40px;"> -->
-                                  <span class="d-none d-lg-inline-flex">Jessica Lee</span>
+                                  <span class="d-none d-lg-inline-flex">
+                                    <?php echo $_SESSION["user_name"]; ?>
+
+                                  </span>
                               </a>
                               <div class="dropdown-menu  dropdown-menu-right ">
                                   <a href="login.php" class="dropdown-item">Log Out</a>
@@ -53,7 +58,7 @@
                     <a href="../admin/user.php" class="collapsed active" > <i class="fa fa-th-large"></i> <span class="nav-label"> USERS </span>  </a>
                 </li>
                 <li> 
-                    <a href="#" class="collapsed active" > <i class="fa fa-th-large"></i> <span class="nav-label">ANNOUNCEMENT </span> </a>
+                    <a href="../admin/announcement.php" class="collapsed active" > <i class="fa fa-th-large"></i> <span class="nav-label">ANNOUNCEMENT </span> </a>
                 </li>
                 <li> 
                     <a href="#" class="collapsed active" > <i class="fa fa-th-large"></i> <span class="nav-label"> WEBSITE </span>  </a>

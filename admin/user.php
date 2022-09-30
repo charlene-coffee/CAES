@@ -34,7 +34,7 @@
         <table id="usersTable" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
                 <thead>
                     <tr>
-                        <th>User Id</th>
+                        <th>UserId</th>
                         <th>User Name</th>
                         <th>Password</th>
                         <th>Role</th>
@@ -150,6 +150,7 @@ var userstable= $('#usersTable').DataTable({
                 {data:'username'},
                 {data:'password'},
                 {data:'role'}
+                
 
     ]
     });
@@ -242,7 +243,11 @@ var userstable= $('#usersTable').DataTable({
     });
 
     $("#editUserBtn").on('click', function(event) {
-      var data =userstable.row('.selected') .data();
+      var data =userstable.row('.selected') .data(); 
+      console.log(data)
+      if (data===undefined) {
+       return;
+      }
 
       $("#updateUserModal #userId").val(data.userId);
       $("#updateUserModal #username").val(data.username);
@@ -310,6 +315,9 @@ var userstable= $('#usersTable').DataTable({
 
     $("#removeUserBtn").on('click', function(event) {
       var data =userstable.row('.selected') .data();
+      if (data===undefined) {
+       return;
+      }
        Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",

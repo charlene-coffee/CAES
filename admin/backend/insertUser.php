@@ -1,6 +1,6 @@
 <?php
 require 'DBconnect.php';
-
+// pang accept
 $user_name = $_POST ['user_name'];
 $password = $_POST ['password'];
 $role = $_POST ['role'];

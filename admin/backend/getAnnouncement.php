@@ -2,17 +2,18 @@
 require 'DbConnect.php';
 
 
-$sql = 'SELECT * FROM users_table';
+$sql = 'SELECT * FROM announcement';
 $result = $conn->query($sql);
 $arrayData =array();
 
 if ($result->num_rows > 0){ 
     while ($row = $result->fetch_assoc()) {
        $arr =array(
-                   'userId'=>$row['user_id'],
-                   'username'=>$row['user_name'],
-                   'password'=>$row['password'],
-                   'role'=>$row['role']
+                   'id'=>$row['id'],
+                   'description'=>$row['description'],
+                   'filename'=>$row['filename'],
+                   'status'=>$row['status'],
+                   'uploaded_by'=>$row['uploaded_by']
        
                  ); 
             array_push($arrayData,$arr);
