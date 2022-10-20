@@ -5,10 +5,11 @@ require 'DbConnect.php';
 $sql = 'SELECT * FROM announcement';
 $result = $conn->query($sql);
 $arrayData =array();
-
+ // for data table 
 if ($result->num_rows > 0){ 
     while ($row = $result->fetch_assoc()) {
        $arr =array(
+       
                    'id'=>$row['id'],
                    'description'=>$row['description'],
                    'filename'=>$row['filename'],

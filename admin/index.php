@@ -18,16 +18,21 @@
 
 
     <?php include("headerpage.php");?>
+
+    <div class="upper-part"  style="padding-left: 150px ; padding-top: 180px">
+        <div class= "row" style="margin-right:0"> 
+             <div class="col-12 logo-caes" > 
+                <img src="../image/CAESLOGO.png" width="150" style=" float:left; padding-top: 5px;" >
+                 <div style=" font-family:pambata; font-size: 57px; padding-top: 40px">CALAMBA ADVENTIST ELEMENTARY SCHOOL</div>   
+                <center><h4 style="font-family:pambata; padding-right: 55px; ">"THE SCHOOL THAT LEADS TO JESUS"</h4> </center>               
+              </div>
+         </div>
+                            
+    </div>
+
+
     <?php include("script.php");?>
 
-    <!-- Messenger Chat Plugin Code -->
-
-
-
-<!-- Your SDK code -->
-
-
-    
 </body>
 </html>
        

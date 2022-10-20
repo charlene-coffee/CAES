@@ -7,17 +7,13 @@
   <?php include("links.php");?>
 
  
-  <style>
 
-
-      
-    </style>
 </head>
 <body>
     <?php include("headerpage.php");?>
 <div class="content">
-    <div class="row" style="padding-left: 30px ;font-size: 20px ; font-family: arial">
-        <div class="label">
+    <div class="row " style="padding-left: 71px ; padding-top: 30px ;font-size: 30px ; font-family: pambata ">
+         <div class="label ">
                 USERS
         </div>
 
@@ -152,7 +148,15 @@ var userstable= $('#usersTable').DataTable({
                 {data:'role'}
                 
 
-    ]
+    ],
+    columnDefs: [
+            {
+                target: 2,
+                visible: false,
+                
+            }
+            
+        ]
     });
    
    

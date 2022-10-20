@@ -1,5 +1,8 @@
-<?php session_start();
- ?>
+<?php session_start();?>
+<?php include("links.php");?>
+
+ 
+ 
 
 
 
@@ -53,19 +56,25 @@
                 </div>
                 </div>
 
-                <ul class="list-sidebar bg-defoult">
+             <ul class="list-sidebar bg-default">
                 <li> 
-                    <a href="../admin/user.php" class="collapsed active" > <i class="fa fa-th-large"></i> <span class="nav-label"> USERS </span>  </a>
+                    <a href="../admin/user.php" class="collapsed active" ><i class="fa-solid fa-user"></i> <span class="nav-label"> USERS </span>  </a>
                 </li>
                 <li> 
-                    <a href="../admin/announcement.php" class="collapsed active" > <i class="fa fa-th-large"></i> <span class="nav-label">ANNOUNCEMENT </span> </a>
+                    <a href="../admin/announcement.php" class="collapsed active" > <i class="fa-solid fa-bars"></i> <span class="nav-label">ANNOUNCEMENT </span> </a>
                 </li>
-                <li> 
-                    <a href="#" class="collapsed active" > <i class="fa fa-th-large"></i> <span class="nav-label"> WEBSITE </span>  </a>
+                <li class="nav-item dropdown"> 
+                    <a href="../admin/website.php" class="collapsed active" > <i class="fa fa-th-large"></i> <span class="nav-label"> WEBSITE </span>  </a>
                 </li>
-                
-                
-                </ul>
+                </li>
+            </ul>
             </div>
+
+            <!-- <i class="fa fa-th-large"></i>  -->
         </aside>
         </div>
+        
+        </div>
+
+
+

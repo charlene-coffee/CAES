@@ -60,33 +60,56 @@
 
                    
                   </div>
+                
                     
                   
            </div>
            
           </div>
+<!-- 
+          this is for the sliding carousel -->
           <div style="padding-top: 50px">
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-              
-            </ol>
+               </ol>
+      
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="d-block w-100 image-style" src="../image/announcement 1.jpg" alt="First slide" >
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100 image-style" src="../image/announcement2.jpg" alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100 image-style" src="../image/student.jpg" alt="Third slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100 image-style" src="../image/announcement.jpg" alt="Third slide">
-              </div>
+
+                                    <?php 
+                        include("./config.php");
+                        require 'DbConnect.php';
+
+
+                        $sql = "SELECT filename FROM announcement order by created_date  limit 100 ";
+                        $result = $conn->query($sql);
+                        $count=0;
+                        $active ="";
+
+                        
+
+                        if ($result->num_rows > 0){ 
+                            while ($row = $result->fetch_assoc()) {
+                              $count=$count+1;
+
+                              if($count ==1){
+                                $active ="active";
+                              }else{
+                                $active="";
+                              }
+ 
+                        ?>
+
+              <div class="carousel-item <?php echo $active ?>">
+                <img class="d-block w-100 image-style" src="<?php echo $base_url."/admin/announcement-img/".$row['filename']; ?>"  >
+              </div> 
+
+                        <?php
+                            
+                               }
+                        }
+                        $conn->close();
+                        ?>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>

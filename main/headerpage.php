@@ -35,14 +35,29 @@
                               <a class="dropdown-item" href="../main/mission-vision.php">Mission & Vission</a>
                             </div>
                           </li>
-                         
+                          <?php 
+                        include("./config.php");
+                        require 'DbConnect.php';
+
+                        $sql = "SELECT * FROM caes_profiles ";
+                        $result = $conn->query($sql);
+                    
+
+                        if ($result->num_rows > 0){ 
+                            while ($row = $result->fetch_assoc()) {
+                        ?>
                           <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="contact" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CONTACT</a>
                             <div class="dropdown-menu  dropdown-menu-right mustard" aria-labelledby="contact" >
-                             <a class="dropdown-item" href="#">LANDLINE : 049-545-7891</a>
-                             <a class="dropdown-item" href="#">CELLPHONE NO:0935-781-1124</a>
+                             <a class="dropdown-item" href="#" >LANDLINE :<?php echo $row ['landline'] ?> </a>
+                             <a class="dropdown-item" href="#">CELLPHONE NO:<?php echo $row ['cellphone'] ?></a>
                             </div>
-    
+                            <?php
+                            
+                          }
+                   }
+                   $conn->close();
+                   ?>
                           </li>
                           
                           <li class="nav-item ">

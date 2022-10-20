@@ -12,7 +12,7 @@
 <body>
 <?php include("headerpage.php");?>
 <div class="content">
-    <div class="row" style="padding-left: 30px ;font-size: 20px ; font-family: arial">
+    <div class="row" style="padding-left: 71px ; padding-top: 30px ;font-size: 30px ; font-family: pambata">
         <div class="label">
                 ANNOUNCEMENT
         </div>
@@ -20,9 +20,8 @@
     </div>
     <div class="row">
         <div class="col-8 text-center"> </div>
-        <div class="col-4"> 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addAnnounceModal"><i class="fa-solid fa-user-plus"></i> Add</button>
-        <button type="button" class="btn btn-success"id="editUserBtn"><i class="fa-solid fa-user-pen"></i> Edit</button>
+        <div class="col-4">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addAnnounceModal"><i class="fa-solid fa-upload"></i> Add</button>
         <button type="button" class="btn btn-danger" id="removeUserBtn"> <i class="fa-solid fa-trash"></i> Remove</button>
         </div>
         <div class="col-12" style=" padding:   5px 30px;">

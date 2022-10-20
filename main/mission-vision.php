@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Enrollment</title>
+  <title>mission-vission</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php include("links.php");?>
@@ -10,25 +10,49 @@
 <body>
     
     <?php include("headerpage.php");?>
-        <div class="container-fluid " style=" background: #FFDB58; padding-bottom: 10px ; padding-top: 0px">
-            <center>
-                <div class="col-xs-12 col-sm-6" >
+        <div class="container-fluid" style=" background: #FFDB58; padding-bottom: 10px ; padding-top: 0px">     
+                    
+                <center>  
+                <?php 
+                        include("./config.php");
+                        require 'DbConnect.php';
+
+                        $sql = "SELECT * FROM caes_profiles ";
+                        $result = $conn->query($sql);
+                    
+
+                        if ($result->num_rows > 0){ 
+                            while ($row = $result->fetch_assoc()) {
+                        ?>
+
+                
+                <div class="col-xs-12 col-sm-6">
                     <H1 style="font-family: pambata; font-size :50px; padding-top:  30px"> VISSION</H1>
-                    <p class="mv-fontsize">
-                        We envision CALAMBA ADVENTIST ELEMENTARY SCHOOL<br>
-                        to be a center of basic christian education equipped<br>
-                        with advance facilities and technologies preparing<br>
-                        pupils with excellence in learning,living and serving.. PHILOSOPHY <br> <br>
-                        God the Creator and Sustainer of entire universe is the source of all knowledge and wisdom. <br>
-                    </p> 
-                    <H1 style="font-family: pambata; font-size :50px; padding-top: 30px;">MISSION</H1>
-                    <p class="mv-fontsize"> To educate pupils toward a wholistic life grounded in a Biblical values, <br>
-                           growing in the likeness of God and be ready for the soon coming of JESUS.
+                    <p class="mv-fontsize" >
+                        <?php
+                        echo $row ['vission']
+                        
+                        ?>
+                    </p>  
+                    
+                    <H1 style="font-family: pambata; font-size :50px; padding-top: 30px;" >MISSION</H1>
+                    <p class="mv-fontsize"> 
+                       <?php
+                       echo $row ['mission']
+                       ?>
                     </p>
+
+                    <?php
+                            
+                        }
+                 }
+                 $conn->close();
+                 ?>
+                    
                         
                     <H1 style="font-family: pambata; font-size :50px; padding-top:  30px">CAES PHILOSOPHY</H1>
                     <p class="mv-fontsize">
-                            God the Creator ans Sustainer of the Earth, and the entire universe is the source of all knowledge and wisdom
+                            God the Creator and Sustainer of the Earth, and the entire universe is the source of all knowledge and wisdom
                     </p>
 
                     <H1 style="font-family: pambata; font-size :50px; padding-top:  30px">CALAMBA HYMN</H1>
@@ -53,10 +77,12 @@
                               Tanging lingkod ng (Iba) Inang Bayan (2X)
 
                               (Ulitin lahat)
-                      </p>         
-                  </div>            
-                </center> 
-               
+                      </p>       
+                      
+                      
+                  </div>   
+                </center>         
+                
         </div>
        
   
