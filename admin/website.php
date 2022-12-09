@@ -1,10 +1,18 @@
-<!DOCTYPE html>
+
+<?php require 'backend/authenticator.php';
+ ?><!DOCTYPE html>
 <html lang="en">
 <head>
   <title>website</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <?php include("links.php");?>
+  <?php include("links.php");
+   
+   $mission="";
+   $vision="";
+  
+  
+  ?>
 
 <style>
   .text-wrap{
@@ -27,9 +35,9 @@
     <div class="row">
         <div class="col-8 text-center"> </div>
         <div class="col-4">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProfileModal"><i class="fa-solid fa-upload"></i> Add</button>
+        <button  id="addBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProfileModal"><i class="fa-solid fa-upload"></i> Add</button>
         <button type="button" class="btn btn-success"id="editprofileBtn"><i class="fa-solid fa-user-pen"></i> Edit</button>
-        <button type="button" class="btn btn-danger" id="removeprofileBtn"> <i class="fa-solid fa-trash"></i> Remove</button>
+        <button type="button" class="btn btn-danger" id="removeMVBtn"> <i class="fa-solid fa-trash"></i> Remove</button>
         </div>
         <div class="col-12" style=" padding:   5px 30px;">
             
@@ -38,14 +46,16 @@
                     <tr>
                         <th>Id</th>
                         <th>Name</th>
-                        <th>Logo</th>
-                        <th>Mission</th>
-                        <th>Vission</th>
+                        <!-- <th>Logo</th> -->
+                        <th>Faculty</th>
+                        <!-- <th>Mission</th>
+                        <th>Vission</th> -->
                         <th>Address</th>
                         <th>Landline</th>
                         <th>Cell No.</th>
                         <th>Created Date</th>
                         <th>Updated Date</th>
+
                 </tr>
                 </thead>
 
@@ -54,9 +64,9 @@
             </table>
         </div>
     </div>
-    <div class="row" style="padding: 0px 30px;">
+    <!-- <div class="row" style="padding: 0px 30px;">
     
-    </div>
+    </div> -->
 
 </div>
 <!-- Add MODAL -->
@@ -77,10 +87,10 @@
                 <input type="text" class="form-control" name="name">
             </div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="file">Logo</label>
                 <input type="file" class="form-control-file" name="logo">
-            </div>
+            </div> -->
             <div class="form-group">
                 <label for="file">Address</label>
                 <input type="text" class="form-control" name="address">
@@ -93,14 +103,14 @@
                 <label for="file">Cellphone No.</label>
                 <input type="number" class="form-control" name="cell_no">
             </div>
-            <div class="form-outline">
+            <!-- <div class="form-outline">
                 <textarea class="form-control" name="vission" rows="4"></textarea>
                 <label class="form-label" for="textAreaExample">Vission</label>
-            </div>
-            <div class="form-outline">
+            </div> -->
+            <!-- <div class="form-outline">
                 <textarea class="form-control" name="mission" rows="4"></textarea>
-                <label class="form-label" for="textAreaExample">Mission</label>
-            </div>
+                <label class="form-label" for="textAreaExample">Mission </label>
+            </div> -->
       
       </div>
       <div class="modal-footer">
@@ -131,10 +141,10 @@
                 <input type="text" class="form-control" name="name"id="name">
             </div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="file">Logo</label>
                 <input type="file" class="form-control-file" name="logo" id="logo">
-            </div>
+            </div> -->
             <div class="form-group">
                 <label for="file">Address</label>
                 <input type="text" class="form-control" name="address" id="address">
@@ -147,14 +157,14 @@
                 <label for="file">Cellphone No.</label>
                 <input type="number" class="form-control" name="cell_no"id="cell_no">
             </div>
-            <div class="form-outline">
+            <!-- <div class="form-outline">
                 <textarea class="form-control" name="vission" id="vission"rows="4"></textarea>
                 <label class="form-label" for="textAreaExample">Vission</label>
             </div>
             <div class="form-outline">
                 <textarea class="form-control" name="mission" id="mission" rows="4"></textarea>
                 <label class="form-label" for="textAreaExample">Mission</label>
-            </div>
+            </div> -->
       
       </div>
     </form>
@@ -168,6 +178,7 @@
 
 <?php include("script.php");?>
 <script>
+
 var profilestable= $('#profilesTable').DataTable({
      bPaginate: false,
      bLengthChange: false,
@@ -183,9 +194,7 @@ var profilestable= $('#profilesTable').DataTable({
     columns:  [
                 {data:'id'},
                 {data:'name'},
-                {data:'logo'},
-                {data:'mission'},
-                {data:'vission'},
+                {data:'faculty'},
                 {data:'address'},
                 {data:'landline'},
                 {data:'cellphone'},
@@ -202,24 +211,27 @@ var profilestable= $('#profilesTable').DataTable({
             },
             {
                     render: function (data, type, full, meta) {
-                        return "<div class='text-wrap width-200'>" + data + "</div>";
-                    },
-                    targets: [3,4]
-                },
-            {
-                    render: function (data, type, full, meta) {
                         return "<div class='text-wrap'>" + data + "</div>";
                     },
                     targets: 2,
                 }
-        ]
+        ],
+        
+        initComplete: function( settings, json ) {
+          var count=profilestable.data().count();
+                    if(count>=1){
+                        $("#addBtn").hide();
+                    } else {
+                      $("#addBtn").show();
+                    }
+        }
     });
     // submit
     $("#form").on('submit', function(e) {
     e.preventDefault();
     
          $.ajax({
-                      url: "../admin/backend/saveProfile.php",
+                      url: "../admin/backend/saveProfile1.php",
                       type: "post",
                       data: new FormData(this),
                       contentType: false,
@@ -273,16 +285,21 @@ var profilestable= $('#profilesTable').DataTable({
 
     $("#editprofileBtn").on('click', function(event) {
       var data =profilestable.row('.selected') .data(); 
+      var count=profilestable.data().count();
+      if(count==0){
+              return false;
+      }
+      
       console.log(data)
       if (data===undefined) {
        return;
       }
       $("#updateprofileModal #id").val(data.id);
       $("#updateprofileModal #name").val(data.name);
-      $("#updateprofileModal #logo").text(data.logo);
+      // $("#updateprofileModal #logo").text(data.logo);
       $("#updateprofileModal #address").val(data.address);
-      $("#updateprofileModal #mission").val(data.mission);
-      $("#updateprofileModal #vission").val(data.vission);
+      // $("#updateprofileModal #mission").val(data.mission);
+      // $("#updateprofileModal #vission").val(data.vission);
       $("#updateprofileModal #landline").val(data.landline);
       $("#updateprofileModal #cell_no").val(data.cell_no);
       
@@ -306,15 +323,9 @@ var profilestable= $('#profilesTable').DataTable({
                       url: "../admin/backend/updateprofile.php",
                       type: "post",
                       data:{ 
-                        id:$('#updateprofileModal #id').val(),
-                        name:$('#updateprofileModal #name').val(),
-                        logo:$('#updateprofileModal #logo').val(),
-                        address:$('#updateprofileModal #address').val(),
                         mission:$('#updateprofileModal #mission').val(),
                         vission:$('#updateprofileModal #vission').val(),
-                        landline:$('#updateprofileModal #landline').val(),  
-                        cell_no:$('#updateprofileModal #cell_no').val()
-
+                    
                        },
                       success: function(data, textStatus, xhr) {
                           console.log(xhr.status);
@@ -350,7 +361,7 @@ var profilestable= $('#profilesTable').DataTable({
 
     });
   //  remove row
-    $("#removeprofileBtn").on('click', function(event) {
+    $("#removeMVBtn").on('click', function(event) {
       var data =profilestable.row('.selected') .data();
       if (data===undefined) {
        return;

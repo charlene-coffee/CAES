@@ -30,7 +30,7 @@
                     <H1 style="font-family: pambata; font-size :50px; padding-top:  30px"> VISSION</H1>
                     <p class="mv-fontsize" >
                         <?php
-                        echo $row ['vission']
+                        echo $row ['vision']
                         
                         ?>
                     </p>  

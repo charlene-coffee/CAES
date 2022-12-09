@@ -1,3 +1,7 @@
+<?php
+ 
+ require 'backend/authenticator.php';
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

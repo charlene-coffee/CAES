@@ -1,10 +1,12 @@
 <?php
 require 'DbConnect.php';
 session_start();
+
+
 $name = $_POST ['name'];
 $address = $_POST ['address'];
-$mission = $_POST ['mission'];
-$vission = $_POST ['vission'];
+// $mission = $_POST ['mission'];
+// $vission = $_POST ['vission'];
 $landline = $_POST ['landline'];
 $cell_no = $_POST ['cell_no'];
 
@@ -21,8 +23,8 @@ if(!empty($_FILES["logo"]["name"])){
         // Upload file to server
         if(move_uploaded_file($_FILES["logo"]["tmp_name"], $targetFilePath)){
             // Insert image file name into database
-            $sql = "INSERT INTO caes_profiles (name, logo, address, mission, vission, landline, cellphone)
-                    VALUE ('$name', '$fileName', '$address', '$mission', '$vission', '$landline', '$cell_no')";
+            $sql = "INSERT INTO caes_profiles (name, logo, address, landline, cellphone)
+                    VALUE ('$name', '$fileName', '$address','$landline', '$cell_no')";
 
                     if ($conn->query($sql)===TRUE) {
                         echo "success";

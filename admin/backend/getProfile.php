@@ -11,10 +11,7 @@ if ($result->num_rows > 0){
        $arr =array(
                    'id'=>$row['id'],
                    'name'=>$row['name'],
-                   'logo'=>$row['logo'],
                    'address'=>$row['address'],
-                   'mission'=>$row['mission'],
-                   'vission'=>$row['vission'],
                    'landline'=>$row['landline'],
                    'cellphone'=>$row['cellphone'],
                    'created_date'=>$row['created_date'],

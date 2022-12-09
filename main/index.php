@@ -19,13 +19,41 @@
           
                 <div class="row">
                   <div class="col-3">
+                  <?php 
+                        include("./config.php");
+                        require 'DbConnect.php';
 
+
+                        $sql = "SELECT logo FROM caes_profiles";
+                        $result = $conn->query($sql);
+                        $count=0;
+                        $active ="";
+
+                        
+
+                        if ($result->num_rows > 0){ 
+                            while ($row = $result->fetch_assoc()) {
+                              $count=$count+1;
+
+                              if($count ==1){
+                                $active ="active";
+                              }else{
+                                $active="";
+                              }
+ 
+                        ?>
                   </div>
                   <div class="col-6" style="font-family: pambata; color: white "> 
-                  <img class="logo-class" src="../image/CAESLOGO.png" width="230"  >
+                    <img class="logo-class" src="<?php echo $base_url."/admin/backend/logo/".$row['logo']; ?>"  width="230"  style="border" >
                       <h2>CALAMBA ADVENTIST ELEMENTARY SCHOOL</h2>
                       <h6 style="font-family: arial">THE SCHOOL THAT LEADS TO JESUS</h6>
                   </div>
+                  <?php
+                            
+                          }
+                   }
+                   $conn->close();
+                   ?>
                   <div class="col-3">
 
                   </div>
@@ -126,6 +154,9 @@
     </div>
     <?php include("script.php");?>
 
+
+
+    
     <!-- Messenger Chat Plugin Code -->
 <div id="fb-root"></div>
 

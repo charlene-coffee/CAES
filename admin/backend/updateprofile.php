@@ -3,7 +3,6 @@ require 'DBconnect.php';
 
 $id = $_POST ['id'];
 $name = $_POST ['name'];
-// $logo = $_POST ['logo'];
 $address = $_POST ['address'];
 $mission = $_POST ['mission'];
 $vission = $_POST ['vission'];

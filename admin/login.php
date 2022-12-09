@@ -171,7 +171,7 @@
         if(checkStringCount($('#username').val()) || checkStringCount($('#password').val())) {
                 
             $.ajax({
-                      url: "../admin/backend/authenticator.php",
+                      url: "../admin/backend/loginAuthenticator.php",
                       type: "post",
                       data:{ 
                         user_name:$('#username').val(),

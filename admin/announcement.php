@@ -1,4 +1,5 @@
-
+<?php require 'backend/authenticator.php';
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +33,7 @@
                         <th>Id</th>
                         <th>Description</th>
                         <th>Filename</th>
-                        <th>Staus</th>
+                        <th>Status</th>
                         <th>Uploaded by:</th>
                     </tr>
                 </thead>
@@ -47,7 +48,7 @@
     </div>
 
 </div>
-
+<!-- modal for add -->
 <div class="modal fade" id="addAnnounceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

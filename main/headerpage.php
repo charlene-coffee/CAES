@@ -31,7 +31,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="aboutus" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ABOUT US</a>
                             <div class="dropdown-menu mustard" aria-labelledby="aboutus">
-                              <a class="dropdown-item" href="../main/faculty.php">Faculty & Staff</a>
+                               <a class="dropdown-item" href="../main/embed.php">Faculty & Staff</a>
                               <a class="dropdown-item" href="../main/mission-vision.php">Mission & Vission</a>
                             </div>
                           </li>
