@@ -214,7 +214,7 @@ a.navbar-brand {
 }
 .bg-defoult{background-color:#222;}
 .sidebar ul{ list-style:none; margin:0px; padding:0px; }
-.sidebar li a,.sidebar li a.collapsed.active{ display:block; padding:8px 21px; color:black;border-left:0px solid #dedede;  text-decoration:none ; padding-top:16px}
+.sidebar li a,.sidebar li a.collapsed.active{ display:block; padding:8px 21px; color:black;border-left:0px solid #dedede;  text-decoration:none ; padding-top:12PX}
 .sidebar li a.active{background-color:#e9ecef;border-left:5px solid #dedede; transition: all 0.3s  ease-in-out}
 
 .sidebar li a:hover{background-color:yellow !important;}

@@ -205,7 +205,7 @@ var profilestable= $('#profilesTable').DataTable({
     ],
     columnDefs: [
             {
-                target: 0,
+                target: [0,2],
                 visible: false,
                 
             },

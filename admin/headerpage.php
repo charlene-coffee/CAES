@@ -21,7 +21,7 @@ include("./config.php");
 
                           <div class="nav-item dropdown">
                               <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                              <img src="<?php echo $base_url."//admin//backend//user-image//".$_SESSION["image"]; ?>" width="30" height="30" style=" border-radius: 50%; padding-buttom: 10px" >
+                              <img src="<?php echo $base_url.'//admin//backend//user-image//'.$_SESSION['image']; ?>" width="30" height="30" style=" border-radius: 50%; padding-buttom: 10px" >
                                   <span class="d-none d-lg-inline-flex">
                                     <?php echo $_SESSION["user_name"]; ?>
 
@@ -63,14 +63,28 @@ include("./config.php");
                     <a href="../admin/user.php" class="collapsed active " ><i class="fa-solid fa-user fa-2x"></i> <span class="nav-label" style="font-family:pambata; font-size: 20px;"> USERS </span>  </a>
                 </li>
                 <li > 
-                    <a href="../admin/editImageLogo.php" class="collapsed active" ><i class="fa-solid fa-pen-to-square  fa-2x"></i> <span class="nav-label"style="font-family:pambata; font-size: 20px;"> EDIT IMAGE / LOGO</span>  </a>
+                    <a href="../admin/editImageLogo.php" class="collapsed active" ><i class="fa-solid fa-pen-to-square  fa-2x"></i> <span class="nav-label"style="font-family:pambata; font-size: 20px;"> EDIT LOGO</span>  </a>
                 </li>
                 <li > 
-                    <a href="../admin/announcement.php" class="collapsed active " > <i class="fa-solid fa-scroll fa-2x"></i><span class="nav-label" style="font-family:pambata; font-size: 20px;">ANNOUNCEMENT </span> </a>
+                    <a href="../admin/faculty.php" class="collapsed active" > <i class="fa-solid fa-chalkboard-user fa-2x"></i> <span class="nav-labelfa-2x" style="font-family:pambata; font-size: 20px;"> FACULTY </span>  </a>
                 </li>
                 <li > 
                     <a href="../admin/website.php" class="collapsed active" > <i class="fa fa-th-large fa-2x"></i> <span class="nav-label" style="font-family:pambata; font-size: 20px;"> WEBSITE </span>  </a>
                 </li>
+                <li > 
+                    <a href="../admin/adminProfile.php" class="collapsed active" ><i class="fa-solid fa-id-card fa-2x"></i> <span class="nav-label"style="font-family:pambata; font-size: 20px;"> ADMIN PROFILE</span>  </a>
+                </li>
+                <li > 
+                    <a href="../admin/announcement.php" class="collapsed active " > <i class="fa-solid fa-scroll fa-2x"></i><span class="nav-label" style="font-family:pambata; font-size: 20px;">ANNOUNCEMENT </span> </a>
+                </li>
+            
+                <li > 
+                    <a href="../admin/imageWeb.php" class="collapsed active" > <i class="fa-solid fa-images fa-2x"></i> <span class="nav-label" style="font-family:pambata; font-size: 20px;"> IMAGE OF SCHOOL </span>  </a>
+                </li>
+                <li > 
+                    <a href="../admin/missionVision.php" class="collapsed active" > <i class="fa-solid fa-flag fa-2x"></i> <span class="nav-labelfa-2x" style="font-family:pambata; font-size: 20px;"> MISSION AND VISION </span>  </a>
+                </li>
+                
                 <li > 
                     <a href="../admin/missionVision.php" class="collapsed active" > <i class="fa-solid fa-flag fa-2x"></i> <span class="nav-labelfa-2x" style="font-family:pambata; font-size: 20px;"> MISSION AND VISION </span>  </a>
                 </li>

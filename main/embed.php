@@ -13,11 +13,48 @@
 
 
         <?php include("headerpage.php");?>
-        <embed class="dropdown-item" src="../resources/pdf/faculty.pdf#toolbar=0&navpanes=0&scrollbar=0" width="800px" height="1000px" />
-          <?php include("footer.php");?>
-    </div>
+
+        <?php 
+                        include("./config.php");
+                        require 'DbConnect.php';
+
+
+                        $sql = "SELECT faculty FROM caes_profiles";
+                        $result = $conn->query($sql);
+                        $count=0;
+                        $active ="";
+
+                        
+
+                        if ($result->num_rows > 0){ 
+                            while ($row = $result->fetch_assoc()) {
+                              $count=$count+1;
+
+                              if($count ==1){
+                                $active ="active";
+                              }else{
+                                $active="";
+                              }
+ 
+                        ?>
+
+        <embed class="dropdown-item" src="<?php echo $base_url."/admin/backend/faculty/".$row['faculty']."#toolbar=0&navpanes=0&scrollbar=0"; ?>" width="800px" height="1000px" />
+
+         <?php
+                            
+                          }
+                   }
+                   $conn->close();
+                   ?>
+
+        <?php include("footer.php");?>
+        </div>
     <?php include("script.php");?>
 
+    
+    
+    
+    
     <!-- Messenger Chat Plugin Code -->
 <div id="fb-root"></div>
 

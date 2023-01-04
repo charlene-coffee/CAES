@@ -27,18 +27,18 @@
 
                 
                 <div class="col-xs-12 col-sm-6">
-                    <H1 style="font-family: pambata; font-size :50px; padding-top:  30px"> VISSION</H1>
+                    <H1 style="font-family: pambata; font-size :50px; padding-top:  30px"> MISSION</H1>
                     <p class="mv-fontsize" >
                         <?php
-                        echo $row ['vision']
+                        echo $row ['mission']
                         
                         ?>
                     </p>  
                     
-                    <H1 style="font-family: pambata; font-size :50px; padding-top: 30px;" >MISSION</H1>
+                    <H1 style="font-family: pambata; font-size :50px; padding-top: 30px;" >VISION</H1>
                     <p class="mv-fontsize"> 
                        <?php
-                       echo $row ['mission']
+                       echo $row ['vision']
                        ?>
                     </p>
 

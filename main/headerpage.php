@@ -5,16 +5,13 @@
        <img src="../image/download.png" width="45" style=" float:left; padding-top: 5px; padding-right: 5px" >
        <img src="../image/CAESLOGO.png" width="45" style=" float:left; padding-top: 5px; padding-right: 5px" >
        <b> <div style=" font-family:pambata; font-size:30px; padding-top: 7px;  padding-left: 7px; float:left">CAES</div> </b>
-    
+       
     </div>
     <div class="col-6 col-sm-4" style="padding-top: 10px; color: #00539cff;  "  >
     <i class="fa-brands fa-square-youtube fa-2x youtube-icon"></i>
     <i class="fa-brands fa-square-twitter fa-2x"style="float:right ;padding-right: 5px"></i>
     <i class="fa-brands fa-square-instagram fa-2x"style="float:right;padding-right: 5px "></i>
     <i class="fa-brands fa-square-facebook  fa-2x" style="float:right ;padding-right: 5px"></i>
-   
-
-
 
     </div>
 

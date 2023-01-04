@@ -6,15 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php include("links.php");?>
 
- 
+  <link rel="stylesheet" href="../resources/fancybox/jquery.fancybox.min.css">
   
 </head>
 <body>
 
 
         <?php include("headerpage.php");?>
-        <section class="section-1" data-bg-overlay="#207336" data-pages="parallax"> 
-          <div class="overlay">
+        <section class="section-1 " data-bg-overlay="#207336" data-pages="parallax" >
+          <div class="overlay"  >
             <div classs="container" style="z-index:2 ;width: 100%; overflow: hidden; text-align:center ; position:absolute "> 
           
                 <div class="row">
@@ -87,29 +87,80 @@
                     </div>
 
                    
-                  </div>
-                
-                    
-                  
-           </div>
-           
+                  </div>  
           </div>
+           
+        </div>
 <!-- 
           this is for the sliding carousel -->
-          <div style="padding-top: 50px">
+        <div style="padding-top: 50px">
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                </ol>
       
-            <div class="carousel-inner">
+                  <div class="carousel-inner">
 
-                                    <?php 
+                                          <?php 
+                              include("./config.php");
+                              require 'DbConnect.php';
+
+
+                              $sql = "SELECT filename FROM announcement order by created_date  limit 100 ";
+                              $result = $conn->query($sql);
+                              $count=0;
+                              $active ="";
+
+                              
+
+                              if ($result->num_rows > 0){ 
+                                  while ($row = $result->fetch_assoc()) {
+                                    $count=$count+1;
+
+                                    if($count ==1){
+                                      $active ="active";
+                                    }else{
+                                      $active="";
+                                    }
+      
+                              ?>
+
+                      <div class="carousel-item <?php echo $active ?>">
+                        <img class="d-block w-100 image-style" src="<?php echo $base_url."/admin/announcement-img/".$row['filename']; ?>"  >
+                      </div> 
+
+                              <?php
+                                  
+                                    }
+                              }
+                              $conn->close();
+                              ?>
+                  </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+        
+        <div style=" background-color:#00539cff ; height : 5px ; width : 100% " ></div>
+<center><div style="font-family:pambata; padding-top: 20px; paddding-bottom: 30px; font-size: 30px"> SCHOOL FACILITY</div></center> 
+       <hr style="border: 2px solid #00539cff; margin: 0px 150px"> <!-- <div style=" background-color:#00539cff ; height : 5px ; width : 50% ; paading-right: 50px" > </div> -->
+
+          <!-- this for image gallery -->
+         <div class="container-fluid" style=" padding-top: 10px  ">
+         <div class="row">
+         <?php 
                         include("./config.php");
                         require 'DbConnect.php';
 
 
-                        $sql = "SELECT filename FROM announcement order by created_date  limit 100 ";
+                      
+                        $sql = "SELECT image_filename FROM image_table";
                         $result = $conn->query($sql);
                         $count=0;
                         $active ="";
@@ -128,34 +179,34 @@
  
                         ?>
 
-              <div class="carousel-item <?php echo $active ?>">
-                <img class="d-block w-100 image-style" src="<?php echo $base_url."/admin/announcement-img/".$row['filename']; ?>"  >
-              </div> 
-
-                        <?php
+             
+         
+              
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a href="<?php echo $base_url."/admin/backend/img-school/".$row['image_filename']; ?>"  class="fancybox" rel="ligthbox">
+                        <img  src="<?php echo $base_url."/admin/backend/img-school/".$row['image_filename']; ?>" class="zoom img-fluid"  alt="">
+                    </a>
+                </div>
+                <?php
                             
-                               }
-                        }
-                        $conn->close();
-                        ?>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-          </div>
-          
-          <?php include("footer.php");?>
-    </div>
-    <?php include("script.php");?>
+                          }
+                   }
+                   $conn->close();
+                   ?> 
 
 
 
+
+
+              </div>
+        </div>
+   
+    
+ 
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+<?php include("script.php");?>
+    <?php include("footer.php");?>
     
     <!-- Messenger Chat Plugin Code -->
 <div id="fb-root"></div>
@@ -165,6 +216,24 @@
 </div>
 
 <script>
+  
+  $(document).ready(function(){
+  $(".fancybox").fancybox({
+        openEffect: "none",
+        closeEffect: "none"
+    });
+    
+    $(".zoom").hover(function(){
+		
+		$(this).addClass('transition');
+	}, function(){
+        
+		$(this).removeClass('transition');
+	});
+});
+    
+  
+  
   var chatbox = document.getElementById('fb-customer-chat');
   chatbox.setAttribute("page_id", "102935255417585");
   chatbox.setAttribute("attribution", "biz_inbox");
@@ -186,7 +255,10 @@
     js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
+
+
 </script>
+
     
 </body>
 </html>
